@@ -1,0 +1,3 @@
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/cmake-build-debug/CMakeFiles/CS557_Project2_James_Casimir.dir
