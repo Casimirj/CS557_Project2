@@ -15,11 +15,12 @@ LinkedList* LinkedList::getArrivingProcess(int arrivingTime){
     if(head != NULL){
         while(!iterator->nextIsNull()){
             if(iterator->isArriving(arrivingTime)){
-                output->addAtHead(iterator);
+                output->addAtHead(new Process(iterator));
+                std::cout << "Found one at tick " << arrivingTime << std::endl;
             }
             iterator = iterator->getNext();
         }
-        if(iterator->isArriving(arrivingTime)) output->addAtHead(iterator);
+        if(iterator->isArriving(arrivingTime)) output->addAtHead(new Process(iterator));
     }
     return output;
 }
@@ -81,7 +82,7 @@ Process* LinkedList::removeAtTail(){
             head = NULL;
         }
     }
-    return tmp;
+    return new Process(tmp);
 }
 bool LinkedList::isEmpty(){
     return (head == NULL || tail == NULL);
@@ -92,12 +93,12 @@ void LinkedList::print(std::string nameInput){
     if(head != NULL){
         Process* iterator = head;
         for(int i = 1; iterator->getNext() != NULL; i++){
-            std::cout << "    Process "<< i << ": ";
+            std::cout << "    Process "<< iterator->getId() << ": ";
             iterator->print();
             std::cout << "\n";
             iterator = iterator->getNext();
         }
-        std::cout << "    Process "<< "X" << ": ";
+        std::cout << "    Process "<< iterator->getId() << ": ";
         iterator->print();
         std::cout << "\n";
     }

@@ -51,6 +51,7 @@ void Process::incWaitTime() {waitTime++;}
 //--------------------------------Process Functions----------------------------
 
 void Process::print(){
+    if(this->isEmpty()) std::cout << "EMPTY";
     std::cout << "[instleft:" << progCounter<< ",arrivingtime:"<<arrivingTime<<",waitTime:"<<waitTime<<"]";
 }
 

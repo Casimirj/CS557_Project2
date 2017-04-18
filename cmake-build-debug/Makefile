@@ -231,6 +231,33 @@ Queue.cpp.s:
 	$(MAKE) -f CMakeFiles/CS557_Project2_James_Casimir.dir/build.make CMakeFiles/CS557_Project2_James_Casimir.dir/Queue.cpp.s
 .PHONY : Queue.cpp.s
 
+RR.o: RR.cpp.o
+
+.PHONY : RR.o
+
+# target to build an object file
+RR.cpp.o:
+	$(MAKE) -f CMakeFiles/CS557_Project2_James_Casimir.dir/build.make CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.o
+.PHONY : RR.cpp.o
+
+RR.i: RR.cpp.i
+
+.PHONY : RR.i
+
+# target to preprocess a source file
+RR.cpp.i:
+	$(MAKE) -f CMakeFiles/CS557_Project2_James_Casimir.dir/build.make CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.i
+.PHONY : RR.cpp.i
+
+RR.s: RR.cpp.s
+
+.PHONY : RR.s
+
+# target to generate assembly for a file
+RR.cpp.s:
+	$(MAKE) -f CMakeFiles/CS557_Project2_James_Casimir.dir/build.make CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.s
+.PHONY : RR.cpp.s
+
 SJF.o: SJF.cpp.o
 
 .PHONY : SJF.o
@@ -333,6 +360,9 @@ help:
 	@echo "... Queue.o"
 	@echo "... Queue.i"
 	@echo "... Queue.s"
+	@echo "... RR.o"
+	@echo "... RR.i"
+	@echo "... RR.s"
 	@echo "... SJF.o"
 	@echo "... SJF.i"
 	@echo "... SJF.s"

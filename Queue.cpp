@@ -19,7 +19,7 @@ Process* Queue::peek(){
 void Queue::enqueue(Process* input){ list->addAtHead(input); size++;}
 void Queue::enqueue(LinkedList* input){
     while(!input->isEmpty()){
-        this->enqueue(input->removeAtTail());
+         this->enqueue(input->removeAtTail());
     }
 }
 LinkedList* Queue::getArriving(int input) {return list->getArrivingProcess(input);}
@@ -51,10 +51,11 @@ int Queue::getTotalWaitTime() {
 }
 
 void Queue::sort(){//Bubble Sort
+    if(this->isSorted()) std::cout << "Already done baby!\n";
     while(!this->isSorted()){
         Process* iterator = list->getHead();
         while(iterator->getNext() != NULL){
-            if(iterator->getProgCounter() > iterator->getNext()->getProgCounter()){
+            if(iterator->getProgCounter() < iterator->getNext()->getProgCounter()){
                 swap(iterator, iterator->getNext());
                 iterator = list->getHead();
 
@@ -129,10 +130,10 @@ bool Queue::isSorted(){
         Process* iterator = list->getHead();
         if(iterator->getNext() != NULL){
             while(iterator->getNext()->getNext() != NULL){
-                if(iterator->getProgCounter() > iterator->getNext()->getProgCounter()) return false;
+                if(iterator->getProgCounter() < iterator->getNext()->getProgCounter()) return false;
                 iterator = iterator->getNext();
             }
-            if(iterator->getProgCounter() > iterator->getNext()->getProgCounter()) return false;
+            if(iterator->getProgCounter() < iterator->getNext()->getProgCounter()) return false;
         }
 
     }

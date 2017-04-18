@@ -108,6 +108,12 @@
 		<Unit filename="/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/Queue.h">
 			<Option target="CS557_Project2_James_Casimir"/>
 		</Unit>
+		<Unit filename="/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.cpp">
+			<Option target="CS557_Project2_James_Casimir"/>
+		</Unit>
+		<Unit filename="/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.h">
+			<Option target="CS557_Project2_James_Casimir"/>
+		</Unit>
 		<Unit filename="/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/SJF.cpp">
 			<Option target="CS557_Project2_James_Casimir"/>
 		</Unit>

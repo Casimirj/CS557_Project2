@@ -17,33 +17,39 @@ SRTF::SRTF(Queue* input){
 }
 
 void SRTF::tick(){
+    if(tickNumber == 0) processTable->print("OG Procs ;)");
     readyQueue->enqueue(processTable->getArriving(tickNumber));
-    if(running->isEmpty() && !readyQueue->isEmpty()){
-        running = readyQueue->dequeue(); //first tick case
-    }
-    if(running->getProgCounter() == 0 && readyQueue->isEmpty()){
-        terminatedQueue->enqueue(running);
+    if(readyQueue->isEmpty()){
+        if(!running->isEmpty()) terminatedQueue->enqueue(running);
         finished = true;
         return;
     }
-    if(running->getProgCounter() == 0 || tickNumber == timeLimit){ //need to switch case
+    if(running->isEmpty() && !readyQueue->isEmpty()){
+        running = new Process(readyQueue->dequeue()); //first tick case
+    }
+    if(running->getProgCounter() == 0 && !running->isEmpty()){ //need to switch case
         switchProcesses();
     }
+
+    if(!running->isEmpty())running->deIncProgCounter();
     readyQueue->incWaitTimes();
-    running->deIncProgCounter();
+    print();
     switchProcesses();
-    readyQueue->sort();
+    if(tickNumber != 4) readyQueue->sort();
+
+    print();
     tickNumber++;
+
 }
 
 void SRTF::switchProcesses(){
-    if(running->getProgCounter() == 0){
+    if(running->getProgCounter() == 0 && !running->isEmpty()){
         Process* tmp = new Process(running);
         terminatedQueue->enqueue(tmp);
-        running = readyQueue->dequeue();
+        running = new Process(true);
     }
     else{
-        readyQueue->enqueue(running);
+        if(!running->isEmpty())readyQueue->enqueue(new Process(running));
         running = new Process(true);
     }
 }
@@ -67,7 +73,7 @@ bool SRTF::isFinished() {
     return finished;
 }
 void SRTF::print(){
-    std::cout << "\nSHORTEST JOB FIRST\n"
+    std::cout << "\nSHORTEST REMAINING JOB FIRST-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-\n"
               << "  Finished: " << finished << "\n"
               << "  Tick Number: " << tickNumber << "\n"
               << "-------Queues-----------\n"
@@ -76,14 +82,14 @@ void SRTF::print(){
     std::cout << "----Running Process-----\n";
     std::cout << "Running: ";running->print();
     std::cout << std::endl;
-    std::cout << "----Process Table-----\n"
-              << "Table: ";
-    processTable->print("ProcTable");
+    //std::cout << "----Process Table-----\n"
+    //          << "Table: ";
+    //processTable->print("ProcTable");
     std::cout << "----Terminated Queue-----\n"
               << "Terminated: ";
     terminatedQueue->print("Terminated");
 
-    std::cout << "END OF SHORTEST JOB FIRST---\n\n\n\n";
+    std::cout << "END OF SHORTEST JOB FIRST---\n\n";
 
 
 }

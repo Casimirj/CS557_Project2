@@ -14,9 +14,9 @@ int TIME_QUANTUM = 15;
 
 LinkedList* mockInput(LinkedList* inputList){
 
-    Process* first = new Process(1, 1, 3);
+    Process* first = new Process(1, 2, 3);
     Process* second = new Process(2, 7, 0);
-    Process* third = new Process(3, 3, 2);
+    Process* third = new Process(3, 3, 4);
     Process* fourth = new Process(4, 8, 1);
 
     inputList->addAtHead(first);
@@ -60,8 +60,11 @@ void SJF_TEST(Queue* input){
 }
 void SRTF_TEST(Queue* input){
     SRTF* srtf = new SRTF(input);
-    while(!srtf->isFinished()){
+
+    int i = 0;
+    while(!srtf->isFinished() && i < 13){
         srtf->tick();
+        i++;
     }
     srtf->output();
 }
@@ -72,9 +75,9 @@ int main() {
     processes = mockInput(processes);
     Queue* input = new Queue(processes);
 
-    FCFS_TEST(input);
-    SJF_TEST(input);
-    //SRTF_TEST(input);
+    //FCFS_TEST(input);
+    //SJF_TEST(input);
+    SRTF_TEST(input);
     /*
     Queue* test = new Queue(processes);
     test->print("Before");
