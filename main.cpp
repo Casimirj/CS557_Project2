@@ -3,13 +3,14 @@
 #include"FCFS.h"
 #include"SJF.h"
 #include"SRTF.h"
+#include"RR.h"
 #include"Queue.h"
 #include"LinkedList.h"
 #include"Process.h"
 
 
 
-int TIME_QUANTUM = 15;
+int TIME_QUANTUM = 2;
 
 
 LinkedList* mockInput(LinkedList* inputList){
@@ -68,6 +69,13 @@ void SRTF_TEST(Queue* input){
     }
     srtf->output();
 }
+void RR_TEST(Queue* input){
+    RR* rr = new RR(input, TIME_QUANTUM);
+    while(!rr->isFinished()){
+        rr->tick();
+    }
+    rr->output();
+}
 
 
 int main() {
@@ -75,9 +83,10 @@ int main() {
     processes = mockInput(processes);
     Queue* input = new Queue(processes);
 
-    //FCFS_TEST(input);
-    //SJF_TEST(input);
-    SRTF_TEST(input);
+    FCFS_TEST(input);
+    SJF_TEST(input);
+    //SRTF_TEST(input);
+    RR_TEST(input);
     /*
     Queue* test = new Queue(processes);
     test->print("Before");

@@ -16,7 +16,6 @@ LinkedList* LinkedList::getArrivingProcess(int arrivingTime){
         while(!iterator->nextIsNull()){
             if(iterator->isArriving(arrivingTime)){
                 output->addAtHead(new Process(iterator));
-                std::cout << "Found one at tick " << arrivingTime << std::endl;
             }
             iterator = iterator->getNext();
         }

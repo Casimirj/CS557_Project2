@@ -61,8 +61,16 @@ Process.h
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.cpp
 RR.h
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.h
+iostream
+-
+RR.h
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.h
 
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.h
+Queue.h
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/Queue.h
+Process.h
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/Process.h
 
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/SJF.cpp
 SJF.h
@@ -97,6 +105,8 @@ SJF.h
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/SJF.h
 SRTF.h
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/SRTF.h
+RR.h
+/media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/RR.h
 Queue.h
 /media/poop/Q/Programming/CLion/CS557_Project2_James_Casimir/Queue.h
 LinkedList.h

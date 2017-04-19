@@ -51,7 +51,6 @@ int Queue::getTotalWaitTime() {
 }
 
 void Queue::sort(){//Bubble Sort
-    if(this->isSorted()) std::cout << "Already done baby!\n";
     while(!this->isSorted()){
         Process* iterator = list->getHead();
         while(iterator->getNext() != NULL){

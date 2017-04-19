@@ -19,6 +19,9 @@ CMakeFiles/CS557_Project2_James_Casimir.dir/Queue.cpp.o: ../Process.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/Queue.cpp.o: ../Queue.cpp
 CMakeFiles/CS557_Project2_James_Casimir.dir/Queue.cpp.o: ../Queue.h
 
+CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.o: ../LinkedList.h
+CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.o: ../Process.h
+CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.o: ../Queue.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.o: ../RR.cpp
 CMakeFiles/CS557_Project2_James_Casimir.dir/RR.cpp.o: ../RR.h
 
@@ -38,6 +41,7 @@ CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../FCFS.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../LinkedList.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../Process.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../Queue.h
+CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../RR.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../SJF.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../SRTF.h
 CMakeFiles/CS557_Project2_James_Casimir.dir/main.cpp.o: ../main.cpp
